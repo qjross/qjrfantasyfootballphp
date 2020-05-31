@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel ="stylesheet" type="text/css" href="style.css">
+
+    <script src="script.js"></script>
+    
+
+</head>
+<body>
+    <div class="flex flex-row px-4 py-2">
+     <div class="bg-teal-200 h-screen">
+      <div class="text-black m-auto leading-loose" id="offense">Offense</div>
+        <div class="text-black m-auto leading-loose" id="defense">Defense/Special Teams</div>
+        <div class="text-black m-auto leading-loose" id="kicker">Kicker</div>
+       </div>
+    <div class="bg-white-200 h-screen" id="offensive" style="display:none">
+        <form action = "offense.php" method = "post">
+            <h1>Enter in your offensive player's stats:</h1>
+			<br>
+            <p>Passing Yards:
+            <input type = "text" size="5" name="yardsPassing">
+            </p>
+			<br>
+            <p>Passing TDs:
+            <input type = "text" size="5" name="passingTDs">
+            </p>
+			<br>
+            <p>Interceptions:
+            <input type = "text" size="5" name="interceptions">
+            </p>
+			<br>
+            <p>Receiving Yards:
+            <input type = "text" size="5" name="yardsReceiving">
+            </p>
+			<br>
+            <p>Receiving TDs:
+            <input type = "text" size="5" name="receivingTDs">
+            </p>
+			<br>
+            <p>Rushing Yards:
+            <input type = "text" size="5" name="yardsRushing">
+            </p>
+			<br>
+            <p>Rushing TDs:
+            <input type = "text" size="5" name="rushingTDs">
+              
+            </p>
+			<br>
+              <p>Lost Fumbles:
+            <input type = "text" size="5" name="lostFumbles">
+            </p>
+			<br>
+            <input type="submit" value="Calculate">
+			
+        </form>
+		<div class="offensiveScoring">
+			Scoring is as follows:<br>
+			Passing Yards: 1 point per 25 yards<br>
+			Passing TDs: 4 points<br>
+			Interceptions: -2 points <br>
+			Receiving Yards: 1 point per 10 yards<br> 
+			Receiving TDs: 6 points <br>
+			Rushing Yards 1 point per 10 yards <br>
+			Rushing TDs: 6 points<br>
+			Fumbles Lost: -2 points
+			</div>
+        </div>
+   <div class="bg-white-200 h-screen" id="defensive" style="display:none">
+        <form action = "defense.php" method = "post">
+            <h1>Enter in your defensive stats:</h1>
+			<br>
+            <p>Blocked Kicks:
+            <input type = "text" size="5" name="blockedKicks">
+            </p>
+			<br>
+            <p>Safeties:
+            <input type = "text" size="5" name="safety">
+            </p>
+			<br>
+            <p>Forced Fumbles:
+            <input type = "text" size="5" name="forcedFumble">
+            </p>
+			<br>
+            <p>Fumble Recoveries:
+            <input type = "text" size="5" name="fumbleRecovery">
+            </p>
+			<br>
+            <p>Interceptions:
+            <input type = "text" size="5" name="interceptions">
+            </p>
+			<br>
+            <p>Sacks:
+            <input type = "text" size="5" name="sacks">
+            </p>
+			<br>
+            <p>Points Allowed:
+            <input type = "text" size="5" name="pointsAllowed">
+            </p>
+              <br>
+            <input type="submit" value="Calculate">
+        </form>
+		<div class="offensiveScoring">
+			Scoring is as follows:<br>
+			Blocked Kicks: 2 points<br>
+			Safeties: 2 points<br>
+			Forced Fumbles: 1 point<br>
+			Fumble Recoveries: 1 point<br> 
+			Interceptions: 2 points <br>
+			Sacks: 1 point <br>
+			Shutout: 10 points<br>
+			2-6 Points Allowed: 8 points<br>
+			7-13 Points Allowed: 6 points<br>
+			14-20 Points Allowed: 2 points<br>
+			21-27 Points Allowed: 1 point<br>
+			28-34 Points Allowed: 0 points<br>
+			35-41 Points Allowed: -2 points<br>
+			42+ Points Allowed: -4 points<br>
+			</div>
+        </div>
+      <div class="bg-white-200 h-screen" id="kicking" style="display:none">
+        <form action = "kicker.php" method = "post">
+            <h1>Enter in your kicker's stats:</h1>
+			<br>
+            <p>Field Goals 17-39 Yards:
+            <input type = "text" size="5" name="madeFG17">
+            </p>
+			<br>
+            <p>Field Goals 40-49 Yards:
+            <input type = "text" size="5" name="madeFG40">
+            </p>
+			<br>
+            <p>Field Goals 50-59 Yards:
+            <input type = "text" size="5" name="madeFG50">
+            </p>
+			<br>
+            <p>Field Goals 60+ Yards:
+            <input type = "text" size="5" name="madeFG60">
+            </p>
+			<br>
+            <p>PAT Made:
+            <input type = "text" size="5" name="madePAT">
+            </p>
+			<br>
+            <p>Missed Kicks (both PATs and Field Goals):
+            <input type = "text" size="5" name="missedKicks">
+            </p>
+            <br>
+              
+            <input type="submit" value="Calculate">
+        </form>
+		Scoring is as follows:<br>
+		PATs: 1 point<br>
+		Field Goal Made 17-39 Yards: 3 points<br>
+		Field Goal Made 40-49 Yards: 4 points<br>
+		Field Goal Made 50-59 Yards: 5 points<br>
+		Field Goal Made 60+ Yards: 6 points<br>
+		Missed Kicks (PAT and FG Alike): -2 points<br>
+        </div>
+</div>
+</body>
+</html>

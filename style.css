@@ -1,0 +1,16 @@
+table, th, td{
+	border: 1px solid black;
+	font-family: Helvetica;
+	width: 60%;
+	background-color: #87918a;
+	color: white;
+	
+}
+
+th, td{
+padding: 8px;
+}
+
+input[type=text] {
+  border:1px solid teal;
+}
